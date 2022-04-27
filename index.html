@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <a id="top"></a>
+        <title>Moda Designer Footwear</title>
+        <meta charset="utf-8">
+        <meta name="description" content="High fashion, top designer, luxury brand footwear for women.">
+        <!--viewport meta tag for responsive design-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--link to css-->
+        <link href="main.css" rel="stylesheet" type="text/css"> 
+        <!--links to Google fonts-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100&display=swap" rel="stylesheet">        
+        <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Oranienbaum&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--wrapper div for all content displayed-->
+        <div id="wrap">
+            <header>
+                <!--display date & time-->
+                <div id="datetime"></div>  
+                <h1 id="storename">Moda</h1> 
+            </header>        
+            <nav>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">shop</a></li>
+                    <li><a href="#">about us</a></li>
+                </ul>
+            </nav>
+            <div id="filter">
+                <!--filter by category (designer)-->
+                Filter By Designer:
+                <select id="ddFilter" onchange="filterByDesigner();">
+                    <option>View All</option>
+                    <option>Christian Louboutin</option>
+                    <option>Jimmy Choo</option>
+                    <option>Dolce & Gabbana</option>
+                    <option>Yves Saint Laurent</option>
+                </select>   
+            </div>           
+            <!--currency selector-->
+            <div id="currency">
+                <!-- $CAD default value checked-->
+                <input type="radio" name="currencySelector" value="$CAD" onclick="updateDisplays();" checked>
+                $CAD
+                <input type="radio" name="currencySelector" value="$USD" onclick="updateDisplays();">
+                $USD
+            </div>
+            <main id="outputArea">
+                <!--item display area-->
+                <section id="catalogue">                   
+                    <div id="displayOutput">
+                        <!--items to be dynamically displayed here-->
+                    </div>
+                </section>
+                <!--cart display area-->
+                <section id="cart">
+                    <h2>Your Cart</h2>
+                    <div id="cartDisplay">
+                    <!--cart to be dynamically displayed here-->
+                    </div>
+                    <!--remove from cart area will only be displayed when items are in cart-->
+                    <div id="remove">
+                        <br>Remove item
+                        <input type="text" id="tbRemoveItem" placeholder="Product ID">
+                        Quantity
+                        <input type="text" id="tbQtyToRemove" placeholder="Quantity to Remove">
+                        <input type="button" class = "removebutton" value="Remove From Cart" onclick="removeFromCart();">
+                    </div>
+                </section>   
+            </main>                     
+            <footer>
+                <!--link to email-->
+                <a href="mailto:l_bos143780@fanshaweonline.ca">Contact Us</a>
+                <a href="#top">Back to Top</a>
+            </footer>   
+        </div>                
+        <!--Javascript-->
+        <script src="main.js"></script>
+    </body>
+</html>

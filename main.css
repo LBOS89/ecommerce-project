@@ -1,0 +1,378 @@
+body {
+    font-family: Antonio, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+header {
+    height: 300px;
+    max-width: 100%;
+    background-image: url("images/background.png"); /*set background image for header*/
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position: top;
+    margin-bottom: -20px;
+}
+
+#wrap { /*wrapper div containing all body content*/
+    max-width: 100%;
+    margin: 0 auto;}
+
+#storename { /*online store name styling*/
+    font-family: Oranienbaum, sans-serif;
+    font-size: 125px;
+    text-shadow: -4px 2px #eb1607; /*set red shadow to mimic look of the background image*/
+    text-align: center;
+    padding-top: 160px;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#datetime { /*current date/time displayed in upper right corner*/
+    float: right;
+    text-align: right;
+    padding: 0;
+    font-size: 12px;
+}
+
+nav {
+    clear: both; /*clear all floats*/
+    max-width: 100%; /*span entire width of page*/
+    background-color: #e0e0e0;
+    border-top: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+    padding: 10px;
+    margin: 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    list-style: none; /*removes bullet points*/
+    display: inline; /*display links horizontally*/
+    padding: 2px 15px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none; /*removes all link formatting (underlines, colour)*/    
+    font-weight: bold;
+    font-family: Antonio, sans-serif;
+    font-size: 20px;
+}
+
+#filter {
+    float: left;
+    margin: 2px 2px 10px 2px;
+}
+
+#ddFilter { /*customize size of dropdown text*/
+    font-size: 25px;
+}
+
+#currency { /*style currency selector radio buttons*/
+    display: block;
+    float: right;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#catalogue {
+    clear: both; /*clear all floats*/
+}
+
+.item {
+    max-width: 100%; /*mobile-first design: 1 item viewed at a time*/
+    border: 2px solid #000000;
+    padding: 20px;
+    margin: 20px 10px;
+}
+
+.productimage {
+    width: 100%; /*product image full width of item div*/
+}
+
+.cartbutton { /*style Add To Cart button*/
+    width: 90px;
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    font-family: Antonio, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.reviewbutton { /*style Submit a Review button*/
+    width: 130px;
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    font-family: Antonio, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.removebutton { /*style Remove from Cart button*/
+    width: 130px;
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    font-family: Antonio, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2px;
+    margin: 5px 2px;
+}
+
+#cart {
+    border-top: 5px solid #000000;
+    position: sticky; /*set position to stay on bottom of page, even when scrolling*/
+    position: -webkit-sticky; /*for Safari browser*/
+    bottom: 0;
+    max-height: 300px; /*set height, so if many items added to cart, cart display does not take over page*/
+    overflow: scroll; /*if info to display doesn't fit within set height, add scroll*/
+    background-color: #e0e0e0;
+    padding-top: 0;
+    padding-bottom: 6px;
+}
+
+h2 { /*style "Your Cart" heading*/
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    padding-top: 0;
+}
+
+#cartDisplay { /*style dynamically created table*/
+    margin: 0px 2px 10px 2px;
+}
+
+#remove {
+    margin: 2px;
+}
+
+#tbRemoveItem { /*style Remove Item textbox*/
+    width: 80px;
+    margin-bottom: 2px;
+}
+
+#tbQtyToRemove { /*style remove Quantity textbox*/
+    width: 120px;
+    margin-bottom: 2px;
+}
+
+.reviews { /*contain submitted reviews in a box with border*/
+    border: 1px solid #000000;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+footer {
+    border-top: 2px solid #000000;
+    background-color: #999999;
+    padding: 4px;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+footer a { /*style links in footer*/
+    color: #000000;    
+    font-weight: bold;
+    font-family: Antonio, sans-serif;
+    font-size: 20px;
+    padding: 4px 15px;
+}
+
+.tableheader { /*style header row of table in cart*/
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.qtycolumn { /*center values in quantity column in cart*/
+    text-align: center;
+}
+
+/*update display at 768px (typical size of iPad)*/
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 40px;
+    }
+    
+    header {
+        background-size: 290px 290px; 
+        background-position: right;
+    }
+    
+    #storename {
+        font-size: 180px;
+        text-align: left;
+        padding-top: 105px;
+    }
+    
+    #datetime {
+        font-size: 15px;
+    }
+    
+    nav ul li a {
+        font-size: 40px;
+    }
+    
+    #filter {
+        float: left;
+        margin: 2px 2px 10px 2px;
+    }
+
+    #ddFilter {
+        height: 40px;
+        width: 200px;
+        margin-bottom: 8px;
+    }
+    
+    #catalogue {
+        clear: both;
+    }
+    
+    .item {
+        max-width: 40%;
+        float: left;
+        margin: 20px 10px 20px 18px;
+        font-size: 25px;
+    }
+    
+    .cartbutton {
+        width: 150px;
+        font-size: 30px;
+        padding-top: 2px;
+        padding-bottom: 10px;
+        margin: 5px auto;
+    }
+    
+    .reviewbutton {
+        width: 160px;
+        font-size: 25px;
+        padding-top: 2px;
+        padding-bottom: 10px;
+        margin: 5px auto;
+    }
+    
+    .removebutton {
+        width: 175px;
+        font-size: 20px;
+        padding-top: 2px;
+        padding-bottom: 10px;
+        margin: 5px auto;
+    }
+    
+    #cart {
+        clear: both;
+        position: sticky;
+        position: -webkit-sticky;
+        bottom: 0;
+    }
+    
+    h2 {
+        font-size: 80px;
+    }    
+      
+    #tbRemoveItem {
+        width: 80px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    
+    #tbQtyToRemove {
+        width: 140px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    
+    footer {
+        clear: both;
+    }
+    
+    footer a {
+        font-size: 40px;
+    }
+    
+    .tableheader {
+        font-weight: bold;
+        font-size: 40px;
+    }
+}
+
+/*update display at 992px (typical aproximate laptop size)*/
+@media only screen and (min-width: 992px) {
+    
+    header {
+        height: 400px;
+        background-size: 380px 380px;
+        background-position: bottom right;
+    }
+    
+    #storename {
+        font-size: 250px;
+        padding-top: 135px;
+        margin-left: 40px
+    }
+    
+    #datetime {
+        font-size: 20px;
+    }
+   
+    #catalogue {
+        clear: both;
+        max-width: 80%;
+        float: left; /*when viewing on laptop or larger, have cart float on right side, rather than the bottom*/
+    }
+    
+    .item {
+        max-width: 20%;
+        float: left;
+        margin: 20px 10px 20px 18px;
+    }
+          
+    #cart { /*when viewed ona laptop or larger, cart floats to right, rather than sitting on bottom*/
+        max-width: 27%;
+        float: right;
+        clear: both;
+        border: 5px solid #000000;
+        padding: 2px;
+        margin-top: 0px;
+        margin-right: 3px;
+        font-size: 20px;
+        max-height: 100%; /*remove 300px set height*/
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+
+    .tableheader {
+        font-weight: bold;
+        font-size: 23px;
+    }
+
+    #cartDisplay {
+        padding: 1px;
+    }
+
+    #outputArea { /*clear all floats above so catalogue & cart output are contained*/
+        clear: both;
+    }
+    
+    footer {
+        clear: both;
+    }
+}
